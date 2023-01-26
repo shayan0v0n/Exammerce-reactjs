@@ -12,6 +12,7 @@ import Dashboard from './Containers/Dashboard/Dashboard'
 import Product from './Containers/Product/Product'
 import { Article } from '@mui/icons-material'
 import Tag from './Containers/Tag/Tag'
+import '../public/styles/index.scss'
 
 const App = () => {
   return (
