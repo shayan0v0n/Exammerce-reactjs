@@ -1,5 +1,4 @@
 import { Box } from '@mui/system'
-import './Header.scss'
 import { Grid, Tooltip, Typography } from '@mui/material'
 import TelegramIcon from '@mui/icons-material/Telegram';
 import InstagramIcon from '@mui/icons-material/Instagram';
