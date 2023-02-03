@@ -8,8 +8,8 @@ const Footer = () => {
   return (
     <Box sx={{ background: '#282828', color: 'white', padding: '3rem' }}>
       <Grid container>
-        <Grid xs={12} md={3}>
-          <Box sx={{ borderRight: '1px solid white' }}>
+        <Grid xs={12} md={3} sx={{ margin: '1rem 0' }}>
+          <Box sx={{ borderRight: { md: '1px solid white' } }}>
               <Box sx={{ display: 'flex', padding: '1rem 0'}} justifyContent="start" alignItems="center">
                 <img src='/assets/imgs/img.png' style={{ width: '8%' }} />
                 <Typography sx={{ padding: '0 .5rem' }} variant='h5'>Exammerce</Typography>
@@ -20,7 +20,7 @@ const Footer = () => {
               </Box>  
           </Box>
         </Grid>
-        <Grid xs={12} md={8}>
+        <Grid xs={12} md={8} sx={{ margin: '1rem 0' }}>
           <Grid container sx={{ padding: '0 1.5rem'}}>
             <Grid xs={12} md={4}>
               <Typography variant='h5'>Other Page</Typography>
@@ -39,7 +39,7 @@ const Footer = () => {
                 </ListItem>
               </List>
             </Grid>
-            <Grid xs={12} md={4}>
+            <Grid xs={12} md={4} sx={{ margin: '1rem 0' }}>
             <Typography variant='h5'>Social Media</Typography>
               <List>
                 <ListItem sx={{ cursor: 'pointer' }}>
