@@ -42,8 +42,8 @@ const SidebarCard = () => {
                 <Box sx={{ margin: '2rem 1rem', display:'flex', justifyContent:'space-start', alignItems:'center' }}>
                         <img src={item.img} style={{ width: '30%', borderRadius: '10px' }} />
                         <Box sx={{ margin: '0 1rem' }}>
-                            <Typography sx={{ fontWeight: 'bold' }} variant='h5'>{item.title}</Typography>
-                            <Typography>{item.author}</Typography>
+                            <Typography sx={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{item.title}</Typography>
+                            <Typography sx={{fontSize: '.8rem'}}>{item.author}</Typography>
                         </Box>
                 </Box>
             )) }

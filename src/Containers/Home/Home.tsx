@@ -37,14 +37,14 @@ const Home = () => {
   return (
     <>
       <Grid container sx={{ margin: '2rem 0' }} justifyContent="space-around">
-        <Grid xs={3} item>
+        <Grid xs={12} md={3} sx={{ display: { xs: 'none', sm: 'flex' } }} item>
           <Box sx={{ padding: '1.5rem', margin: '2rem', background: "#D9D9D9", borderRadius: '8px' }}>
-            <Typography variant='h4' fontWeight="bold">Top 10 This Week</Typography>
+            <Typography variant='h5' fontWeight="bold">Top 10 This Week</Typography>
               <Divider sx={{ margin: "1rem" }} />
             <SidebarCard />
           </Box>
         </Grid>
-        <Grid xs={8} item>
+        <Grid xs={12} md={8} item>
         <Swiper
           style={{ margin: "2rem", borderRadius: '15px' }}
           spaceBetween={50}
