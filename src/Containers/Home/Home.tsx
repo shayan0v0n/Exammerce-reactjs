@@ -1,4 +1,4 @@
-import { Divider, Grid, Tab, Tabs, Typography } from '@mui/material'
+import { Button, Divider, Grid, Tab, Tabs, Typography } from '@mui/material'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 import 'swiper/css';
@@ -7,13 +7,14 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 import { Box } from '@mui/system';
-import SidebarCard from '../../Components/Cards/SidebarCard';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { useState } from 'react';
 import SidebarOne from './Sidebars/SidebarOne';
 import SidebarTwo from './Sidebars/SidebarTwo';
 import BookTabOne from './Booktabs/BookTabOne';
 import BookTabTwo from './Booktabs/BookTabTwo';
 import BookTabThree from './Booktabs/BookTabThree';
+
 
 interface sliderItem {
   img: string
@@ -73,26 +74,35 @@ const bookTabHandler = (event: React.SyntheticEvent, newValue: number) => {
           )) }
         </Swiper>
           <Box>
-            <Tabs value={bookTabValue} onChange={bookTabHandler} aria-label="basic tabs example" textColor='inherit' sx={{
-              '& .MuiTabs-indicator': { backgroundColor: '#F65D4E', color: 'black'},
-              '& .MuiTab-root': { color: 'black' },
-              '& .Mui-selected': { color: 'black', fontWeight: 'bold' },
-            }}>
-              <Tab label="Popular Books" />
-              <Tab label="On Sale" />
-              <Tab label="Top Rated"  />
-            </Tabs>
-            <Box sx={{ padding: 2 }}>
-            {bookTabValue === 0 && (
-              <BookTabOne />
-            )}
-            {bookTabValue === 1 && (
-              <BookTabTwo/>
-            )}
-            {bookTabValue === 2 && (
-              <BookTabThree />
-            )}
-          </Box>
+            <Grid container>
+              <Grid xs={7}>
+                <Box>
+                  <Tabs value={bookTabValue} onChange={bookTabHandler} aria-label="basic tabs example" textColor='inherit' sx={{
+                    '& .MuiTabs-indicator': { backgroundColor: '#F65D4E', color: 'black'},
+                    '& .MuiTab-root': { color: 'black' },
+                    '& .Mui-selected': { color: 'black', fontWeight: 'bold' },
+                  }}>
+                    <Tab label="Popular Books" />
+                    <Tab label="On Sale" />
+                    <Tab label="Top Rated"  />
+                  </Tabs>
+                  <Box sx={{ padding: 2 }}>
+                  {bookTabValue === 0 && (
+                    <BookTabOne />
+                  )}
+                  {bookTabValue === 1 && (
+                    <BookTabTwo/>
+                  )}
+                  {bookTabValue === 2 && (
+                    <BookTabThree />
+                  )}
+                </Box>
+                </Box>
+              </Grid>
+              <Grid xs={4} textAlign='right'>
+                  <Button variant='contained' sx={{ background: '#F65D4E', '&:hover': {background: '#F65D4E'}, borderRadius: '30px' }}>All Products <ArrowRightIcon /></Button>
+              </Grid>
+            </Grid>
           </Box>
         </Grid>
       </Grid>
@@ -100,5 +110,5 @@ const bookTabHandler = (event: React.SyntheticEvent, newValue: number) => {
     </>
   )
 }
-// F65D4E // custom tab...
+
 export default Home
