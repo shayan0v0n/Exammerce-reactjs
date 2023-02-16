@@ -9,17 +9,16 @@ import 'swiper/css/autoplay';
 import { Box } from '@mui/system';
 import SidebarCard from '../../Components/Cards/SidebarCard';
 import { useState } from 'react';
+import SidebarOne from './Sidebars/SidebarOne';
+import SidebarTwo from './Sidebars/SidebarTwo';
+import BookTabOne from './Booktabs/BookTabOne';
+import BookTabTwo from './Booktabs/BookTabTwo';
+import BookTabThree from './Booktabs/BookTabThree';
 
 interface sliderItem {
   img: string
   tilte: string
   des: string
-}
-
-interface product {
-  title:string
-  author:string
-  img:string
 }
 
 const dataSlider:sliderItem[] = [
@@ -40,46 +39,6 @@ const dataSlider:sliderItem[] = [
   }
 ];
 
-const products1: product[] = [
-  {
-      title: 'Life Flight',
-      author: 'Misty Figueroa',
-      img: '/assets/imgs/sidebarProducts/1.jpg'
-  },
-  {
-      title: 'Heartland Stars',
-      author: 'Ernesto Wade',
-      img: '/assets/imgs/sidebarProducts/2.jpg'
-  },
-  {
-      title: 'Goodbye Again',
-      author: 'Gilberto Mills',
-      img: '/assets/imgs/sidebarProducts/3.jpg'
-  },
-  {
-      title: 'Annie Leibovitz:',
-      author: 'Rita James',
-      img: '/assets/imgs/sidebarProducts/4.jpg'
-  },
-  {
-      title: 'The Good Egg',
-      author: 'Arthur Gonzalez',
-      img: '/assets/imgs/sidebarProducts/5.jpg'
-  }
-]
-
-const products2: product[] = [
-  {
-      title: 'Annie Leibovitz:',
-      author: 'Rita James',
-      img: '/assets/imgs/sidebarProducts/4.jpg'
-  },
-  {
-      title: 'The Good Egg',
-      author: 'Arthur Gonzalez',
-      img: '/assets/imgs/sidebarProducts/5.jpg'
-  }
-]
 const Home = () => {
 
 const [bookTabValue, setBookTabValue] = useState(0);
@@ -92,16 +51,8 @@ const bookTabHandler = (event: React.SyntheticEvent, newValue: number) => {
     <>
       <Grid container sx={{ margin: '2rem 0' }} justifyContent="space-around">
         <Grid xs={12} md={3} sx={{ display: { xs: 'none', sm: 'block' } }} item>
-          <Box sx={{ padding: '1.5rem', margin: '2rem', background: "#D9D9D9", borderRadius: '8px' }}>
-            <Typography variant='h5' fontWeight="bold">Top 10 This Week</Typography>
-              <Divider sx={{ margin: "1rem" }} />
-            <SidebarCard products={products1}  />
-          </Box>
-          <Box sx={{ padding: '1.5rem', margin: '2rem', background: "#D9D9D9", borderRadius: '8px' }}>
-            <Typography variant='h5' fontWeight="bold">Top 10 This Week</Typography>
-              <Divider sx={{ margin: "1rem" }} />
-            <SidebarCard products={products2} />
-          </Box>
+          <SidebarOne />
+          <SidebarTwo />
         </Grid>
         <Grid xs={12} md={8} item>
         <Swiper
@@ -133,19 +84,13 @@ const bookTabHandler = (event: React.SyntheticEvent, newValue: number) => {
             </Tabs>
             <Box sx={{ padding: 2 }}>
             {bookTabValue === 0 && (
-              <Box>
-                <Typography>The first tab</Typography>
-              </Box>
+              <BookTabOne />
             )}
             {bookTabValue === 1 && (
-              <Box>
-                <Typography>The second tab</Typography>
-              </Box>
+              <BookTabTwo/>
             )}
             {bookTabValue === 2 && (
-              <Box>
-                <Typography>The third tab</Typography>
-              </Box>
+              <BookTabThree />
             )}
           </Box>
           </Box>

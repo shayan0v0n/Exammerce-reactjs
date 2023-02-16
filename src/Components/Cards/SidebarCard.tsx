@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 interface product {
     title:string
