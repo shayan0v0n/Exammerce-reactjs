@@ -11,12 +11,12 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <>
-      <Box sx={{ background: '#282828', color: 'white', padding: '1rem 0rem' }}>
+      <Box sx={{ background: '#282828', color: 'white', padding: '1rem 0rem'}}>
         <Grid container justifyContent='space-between'>
-          <Grid md={6} xs={12} textAlign="center">
+          <Grid md={6} xs={12} textAlign="center" justifyContent="center" sx={{display: {xs: 'none', sm: 'flex' }}}>
             <Typography>By One, Get One 50% Off Books For All Ages</Typography>
           </Grid>
-          <Grid md={6} xs={12} textAlign="center">
+          <Grid md={6} xs={12} textAlign="center" justifyContent="center" sx={{display: {xs: 'none', sm: 'flex' }}}>
             <Tooltip title="Telegram" placement='bottom'>
               <TelegramIcon sx={{ cursor: 'pointer' }} />
             </Tooltip>
@@ -28,6 +28,13 @@ const Header = () => {
             </Tooltip>
           </Grid>
         </Grid>
+        <Box sx={{ display: {xs: 'flex', sm: 'none'}}}  justifyContent="center" alignItems="center">
+            <Typography sx={{ padding: '0 .4rem', fontWeight: '500'}}><Link to="/" style={{color: 'white', textDecoration: 'none'}}>Home</Link></Typography>
+            <Typography sx={{ padding: '0 .4rem', fontWeight: '500' }}><Link to="/shop" style={{color: 'white', textDecoration: 'none'}}>Shop</Link></Typography>
+            <Typography sx={{ padding: '0 .4rem', fontWeight: '500' }}><Link to="/blog" style={{color: 'white', textDecoration: 'none'}}>Blog</Link></Typography>
+            <Typography sx={{ padding: '0 .4rem', fontWeight: '500' }}><Link to="/FAQs" style={{color: 'white', textDecoration: 'none'}}>FAQs</Link></Typography>
+            <Typography sx={{ padding: '0 .4rem', fontWeight: '500' }}><Link to="/about-us" style={{color: 'white', textDecoration: 'none'}}>About Us</Link></Typography>
+        </Box>
       </Box>
       <Box sx={{ background: '#D9D9D9', padding: '1rem 0' }}>
         <Grid container>
@@ -35,12 +42,14 @@ const Header = () => {
               <img src='/assets/imgs/img.png' style={{ width: '8%' }} />
               <Typography sx={{ padding: '0 .5rem' }}>Exammerce</Typography>
           </Grid>
-          <Grid xs={4} sx={{ display: 'flex'}} justifyContent="center" alignItems="center">
-              <Typography sx={{ padding: '0 1rem', fontWeight: '500'}}><Link to="/" style={{color: 'black', textDecoration: 'none'}}>Home</Link></Typography>
-              <Typography sx={{ padding: '0 1rem', fontWeight: '500' }}><Link to="/shop" style={{color: 'black', textDecoration: 'none'}}>Shop</Link></Typography>
-              <Typography sx={{ padding: '0 1rem', fontWeight: '500' }}><Link to="/blog" style={{color: 'black', textDecoration: 'none'}}>Blog</Link></Typography>
-              <Typography sx={{ padding: '0 1rem', fontWeight: '500' }}><Link to="/FAQs" style={{color: 'black', textDecoration: 'none'}}>FAQs</Link></Typography>
-              <Typography sx={{ padding: '0 1rem', fontWeight: '500' }}><Link to="/about-us" style={{color: 'black', textDecoration: 'none'}}>About Us</Link></Typography>
+          <Grid xs={4} sx={{display: 'flex'}}  justifyContent="center" alignItems="center">
+              <Box sx={{ display: {xs: 'none', sm: 'flex'}}}  justifyContent="center" alignItems="center">
+                <Typography sx={{ padding: '0 1rem', fontWeight: '500'}}><Link to="/" style={{color: 'black', textDecoration: 'none'}}>Home</Link></Typography>
+                <Typography sx={{ padding: '0 1rem', fontWeight: '500' }}><Link to="/shop" style={{color: 'black', textDecoration: 'none'}}>Shop</Link></Typography>
+                <Typography sx={{ padding: '0 1rem', fontWeight: '500' }}><Link to="/blog" style={{color: 'black', textDecoration: 'none'}}>Blog</Link></Typography>
+                <Typography sx={{ padding: '0 1rem', fontWeight: '500' }}><Link to="/FAQs" style={{color: 'black', textDecoration: 'none'}}>FAQs</Link></Typography>
+                <Typography sx={{ padding: '0 1rem', fontWeight: '500' }}><Link to="/about-us" style={{color: 'black', textDecoration: 'none'}}>About Us</Link></Typography>
+              </Box>
           </Grid>
           <Grid xs={4} sx={{ display: 'flex'}} justifyContent="center" alignItems="center">
             <Box>

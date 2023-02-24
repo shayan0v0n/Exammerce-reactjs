@@ -100,7 +100,7 @@ const bookTabHandler = (event: React.SyntheticEvent, newValue: number) => {
                 </Box>
               </Grid>
               <Grid xs={4} textAlign='right'>
-                  <Button variant='contained' sx={{ background: '#F65D4E', '&:hover': {background: '#F65D4E'}, borderRadius: '30px' }}>All Products <ArrowRightIcon /></Button>
+                  <Button variant='contained' sx={{ background: '#F65D4E', '&:hover': {background: '#CC3223'}, borderRadius: '30px' }}>All Products <ArrowRightIcon /></Button>
               </Grid>
             </Grid>
           </Box>
