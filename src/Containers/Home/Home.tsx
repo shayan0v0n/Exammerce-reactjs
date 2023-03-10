@@ -60,8 +60,6 @@ const bookTabHandler = (event: React.SyntheticEvent, newValue: number) => {
           style={{ margin: "2rem", borderRadius: '15px' }}
           spaceBetween={50}
           slidesPerView={1}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
           loop={true}
           autoplay={{
@@ -86,17 +84,6 @@ const bookTabHandler = (event: React.SyntheticEvent, newValue: number) => {
                     <Tab label="On Sale" />
                     <Tab label="Top Rated"  />
                   </Tabs>
-                  <Box sx={{ padding: 2 }}>
-                  {bookTabValue === 0 && (
-                    <BookTabOne />
-                  )}
-                  {bookTabValue === 1 && (
-                    <BookTabTwo/>
-                  )}
-                  {bookTabValue === 2 && (
-                    <BookTabThree />
-                  )}
-                </Box>
                 </Box>
               </Grid>
               <Grid xs={4} textAlign='right'>
@@ -104,6 +91,17 @@ const bookTabHandler = (event: React.SyntheticEvent, newValue: number) => {
               </Grid>
             </Grid>
           </Box>
+          <Box sx={{ padding: 2 }}>
+          {bookTabValue === 0 && (
+            <BookTabOne />
+          )}
+          {bookTabValue === 1 && (
+            <BookTabTwo/>
+          )}
+          {bookTabValue === 2 && (
+            <BookTabThree />
+          )}
+        </Box>
         </Grid>
       </Grid>
     
